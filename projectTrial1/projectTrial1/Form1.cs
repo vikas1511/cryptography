@@ -18,8 +18,8 @@ namespace projectTrial1
         }
         public enum State
         {
-            Hiding,
-            Zero_Filling
+            Hiding,         //  Defines what state the 
+            Zero_Filling    //  application is currently in.
         };
 
         OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
