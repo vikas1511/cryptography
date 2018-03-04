@@ -104,15 +104,16 @@ namespace projectTrial2
             return eText;
         }
 
-        private int revBits(int nn)
+        private int revBits(int x)
         {
-            int results = 0;
+            int y = 0;
             for(int i = 0; i < 8; i++)
             {
-                results = results * 2 + nn % 2;
-                nn /= 2;
+                y <<= 1;
+                y |= (x & 1);
+                x >>= 1;
             }
-            return results;
+            return y;
         }
     }
 }
