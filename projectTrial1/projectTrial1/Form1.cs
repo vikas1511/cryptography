@@ -53,6 +53,7 @@ namespace projectTrial1
             string saveFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             saveFile += "\\Output.bmp";
             bmpNew.Save(saveFile); //save the new image file as output.bmp in Desktop
+            MessageBox.Show(sText);
             MessageBox.Show("Encryption Completed. Image saved to Desktop", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
