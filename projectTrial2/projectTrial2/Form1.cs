@@ -87,6 +87,7 @@ namespace projectTrial2
 
                         if(colorUnitIndex % 8 == 0)
                         {
+                            MessageBox.Show(charValue.ToString());
                             charValue = revBits(charValue);
 
                             if (charValue == 0)

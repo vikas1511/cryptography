@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace projectTrial1
 {
@@ -43,19 +45,24 @@ namespace projectTrial1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text == String.Empty || richTextBox1.Text == String.Empty) // If image is not selected or text not input, show error
+            if(textBox1.Text == String.Empty || richTextBox1.Text == String.Empty || textBox2.Text == String.Empty) // If image is not selected or text not input, show error
             {
                 MessageBox.Show("Fill all the neccessary fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            sText = richTextBox1.Text;
+            if(textBox2.Text.Length < 6)
+            {
+                MessageBox.Show("Secret Key must be 6 characters at least", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            sText = Crypto.EncryptStringAES(textBox1.Text,textBox2.Text);
             Bitmap bmpNew = encryption(bmap, sText); // call encryption function
             string saveFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            saveFile += "\\Output.bmp";
-            bmpNew.Save(saveFile); //save the new image file as output.bmp in Desktop
-            MessageBox.Show(sText);
+            saveFile += "\\Output.png";
+            bmpNew.Save(saveFile,ImageFormat.Png); //save the new image file as output.png in Desktop
             MessageBox.Show("Encryption Completed. Image saved to Desktop", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         private Bitmap encryption(Bitmap bmp, String str)
         {
@@ -77,11 +84,11 @@ namespace projectTrial1
 
                     for(int n = 0; n < 3; n++)
                     {
-                        if(pixelElementIndex % 8 == 0)
+                        if(pixelElementIndex % 8 == 0)  // if 8 bits are processed.
                         {
-                            if(st == State.Zero_Filling && zeros == 8)
+                            if(st == State.Zero_Filling && zeros == 8) // check if the everything is done
                             {
-                                if((pixelElementIndex-1)%3 < 2)
+                                if((pixelElementIndex-1)%3 < 2)  // apply the last pixel ( if only a part of it is affected )
                                 {
                                     bmp.SetPixel(j, i, Color.FromArgb(R, G, B));
                                 }
@@ -94,7 +101,7 @@ namespace projectTrial1
 
                         }
 
-                        switch(pixelElementIndex % 3)
+                        switch(pixelElementIndex % 3)  // check which pixel element has to hide a bit in its LSB
                         {
                             case 0:
                                 {
@@ -128,7 +135,7 @@ namespace projectTrial1
                         }
 
                         pixelElementIndex++;
-                        if (st == State.Zero_Filling)
+                        if (st == State.Zero_Filling)  // increment the value of zeros until it is 8
                             zeros++;
                     }
                 }
