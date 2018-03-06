@@ -56,7 +56,7 @@ namespace projectTrial1
                 MessageBox.Show("Secret Key must be 6 characters at least", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            sText = Crypto.EncryptStringAES(textBox1.Text,textBox2.Text);
+            sText = Crypto.EncryptStringAES(richTextBox1.Text,textBox2.Text);
             Bitmap bmpNew = encryption(bmap, sText); // call encryption function
             string saveFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             saveFile += "\\Output.png";
