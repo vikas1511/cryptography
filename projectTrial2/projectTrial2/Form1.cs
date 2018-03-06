@@ -47,6 +47,15 @@ namespace projectTrial2
                 MessageBox.Show("Select an Image to Decrypt", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             sText = decrypt(bmap);
+            try
+            {
+                sText = Crypto.DecryptStringAES(sText, textBox2.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Wrong Passowrd", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                this.Close();
+            }
             richTextBox1.Text = sText;
             richTextBox1.Show();
             MessageBox.Show("Decryption Completed", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -87,7 +96,6 @@ namespace projectTrial2
 
                         if(colorUnitIndex % 8 == 0)
                         {
-                            MessageBox.Show(charValue.ToString());
                             charValue = revBits(charValue);
 
                             if (charValue == 0)
