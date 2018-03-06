@@ -44,7 +44,7 @@ namespace projectTrial2
         {
             if(textBox1.Text == String.Empty)
             {
-                MessageBox.Show("Selelct an Image to Decrypt", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select an Image to Decrypt", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             sText = decrypt(bmap);
             richTextBox1.Text = sText;
