@@ -54,6 +54,8 @@ namespace projectTrial1
             if(textBox2.Text.Length < 6)
             {
                 MessageBox.Show("Secret Key must be 6 characters at least", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox2.Text = String.Empty;
+                return;
             }
 
             sText = Crypto.EncryptStringAES(richTextBox1.Text,textBox2.Text);
