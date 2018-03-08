@@ -48,7 +48,7 @@ namespace projectTrial1
             if(textBox1.Text == String.Empty || richTextBox1.Text == String.Empty || textBox2.Text == String.Empty) // If image is not selected or text not input, show error
             {
                 MessageBox.Show("Fill all the neccessary fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                return;
             }
 
             if(textBox2.Text.Length < 6)
