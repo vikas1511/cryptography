@@ -58,11 +58,11 @@ namespace projectTrial1
                 return;
             }
 
-            sText = Crypto.EncryptStringAES(richTextBox1.Text,textBox2.Text);
+            sText = Crypto.EncryptStringAES(richTextBox1.Text,textBox2.Text.ToString());
             Bitmap bmpNew = encryption(bmap, sText); // call encryption function
             string saveFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             saveFile += "\\Output.bmp";
-            bmpNew.Save(saveFile); //save the new image file as output.png in Desktop
+            bmpNew.Save(saveFile,ImageFormat.Bmp); //save the new image file as output.png in Desktop
             MessageBox.Show("Encryption Completed. Image saved to Desktop", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

@@ -82,10 +82,17 @@ namespace imageEncryption
 
 
             // reading image begins here.
-            byte[] arr = File.ReadAllBytes(open2.FileName);
-            String str = Encoding.ASCII.GetString(arr);
+            for(int i=0; i <bmp2.Height; i++)
+            {
+                for(int j = 0; j < bmp2.Width; j++)
+                {
+                    Color pix = bmp2.GetPixel(j, i);
+                    String abc = pix.R.ToString("000") + pix.G.ToString("000") + pix.B.ToString("000");
+                    iText += abc;
+                }
+            }
 
-            MessageBox.Show(str);
+            MessageBox.Show(iText);
 
             /*MessageBox.Show(iText);
             iText = Crypto.EncryptStringAES(iText, textBox3.Text);
