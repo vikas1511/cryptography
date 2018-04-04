@@ -61,8 +61,8 @@ namespace projectTrial1
             sText = Crypto.EncryptStringAES(richTextBox1.Text,textBox2.Text);
             Bitmap bmpNew = encryption(bmap, sText); // call encryption function
             string saveFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            saveFile += "\\Output.png";
-            bmpNew.Save(saveFile,ImageFormat.Png); //save the new image file as output.png in Desktop
+            saveFile += "\\Output.bmp";
+            bmpNew.Save(saveFile); //save the new image file as output.png in Desktop
             MessageBox.Show("Encryption Completed. Image saved to Desktop", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
