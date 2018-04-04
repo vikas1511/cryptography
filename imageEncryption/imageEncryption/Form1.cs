@@ -89,10 +89,13 @@ namespace imageEncryption
                     Color pix = bmp2.GetPixel(j, i);
                     String abc = pix.R.ToString("000") + pix.G.ToString("000") + pix.B.ToString("000");
                     iText += abc;
+                    richTextBox1.Text += abc;
+                    //MessageBox.Show(abc);
                 }
             }
 
-            MessageBox.Show(iText);
+            //MessageBox.Show(iText);
+            
 
             /*MessageBox.Show(iText);
             iText = Crypto.EncryptStringAES(iText, textBox3.Text);
