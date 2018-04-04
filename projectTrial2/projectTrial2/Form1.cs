@@ -39,7 +39,7 @@ namespace projectTrial2
                 pictureBox1.Show();
             }
         }
-
+        int test = 0;
         private void button2_Click(object sender, EventArgs e)
         {
             if(textBox1.Text == String.Empty)
@@ -53,12 +53,28 @@ namespace projectTrial2
             }
             catch
             {
-                MessageBox.Show("Wrong Passowrd", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                this.Close();
+                test += 1;
+                if (test < 3)
+                {
+                    richTextBox1.Text = String.Empty;
+
+                    MessageBox.Show("Wrong Passowrd" +"\n" + (3 - test) + " tries left!!", "Error" , MessageBoxButtons.OK, MessageBoxIcon.Error );
+                    
+                    textBox2.Text = String.Empty;
+
+                    
+                    return;
+                }
+                else
+                {
+                    test = 0;
+                    this.Close();
+                }
             }
             richTextBox1.Text = sText;
             richTextBox1.Show();
             MessageBox.Show("Decryption Completed", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            textBox2.Text = string.Empty;
         }
 
         private string decrypt(Bitmap bmp)
