@@ -81,17 +81,13 @@ namespace imageEncryption
             }
 
 
-            /* reading image begins here.
-            for (int i = 0; i < bmp1.Height; i++) 
-            {
-                for (int j = 0; j < bmp1.Width; j++) 
-                {
-                    Color pix = bmp1.GetPixel(j, i);
-                    iText = iText + pix.R.ToString("000") + pix.G.ToString("000") + pix.B.ToString("000");
-                }
-            }
-            */
-            //MessageBox.Show(iText);
+            // reading image begins here.
+            byte[] arr = File.ReadAllBytes(open2.FileName);
+            String str = Encoding.ASCII.GetString(arr);
+
+            MessageBox.Show(str);
+
+            /*MessageBox.Show(iText);
             iText = Crypto.EncryptStringAES(iText, textBox3.Text);
             //MessageBox.Show(iText);
             Bitmap bmp3 = encryption(bmp1, iText);
@@ -99,7 +95,7 @@ namespace imageEncryption
             savef += "\\output.png";
             bmp3.Save(savef, ImageFormat.Png);
             MessageBox.Show("Encryption Complete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+            */
         }
 
         private Bitmap encryption(Bitmap bmp, String str)
