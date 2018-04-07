@@ -100,7 +100,7 @@ namespace imageEncryption
             
 
             //MessageBox.Show(iText);
-            iText = Crypto.EncryptStringAES(iText, textBox3.Text);
+            iText = Crypto.EncryptStringAES(iText, textBox3.Text.ToString());
             //MessageBox.Show(iText);
             Bitmap bmp3 = encryption(bmp1, iText);
             string savef = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);

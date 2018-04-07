@@ -49,7 +49,7 @@ namespace projectTrial2
             sText = decrypt(bmap);
             try
             {
-                sText = Crypto.DecryptStringAES(sText, textBox2.Text);
+                sText = Crypto.DecryptStringAES(sText, textBox2.Text.ToString());
             }
             catch
             {
