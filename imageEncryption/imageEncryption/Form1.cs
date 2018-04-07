@@ -97,7 +97,7 @@ namespace imageEncryption
             }
 
             //MessageBox.Show(iText);
-            
+
 
             //MessageBox.Show(iText);
             iText = Crypto.EncryptStringAES(iText, textBox3.Text.ToString());
@@ -120,7 +120,7 @@ namespace imageEncryption
 
             for (int i = 0; i < bmp.Height; i++) // iterate through rows
             {
-                for (int j = 8; j < bmp.Width; j++) // iterate in each row
+                for (int j = 0; j < bmp.Width; j++) // iterate in each row
                 {
                     Color pixel = bmp.GetPixel(j, i);  //read pixel at position j,i
 
