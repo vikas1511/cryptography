@@ -80,6 +80,8 @@ namespace imageEncryption
                 return;
             }
 
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = bmp2.Width*bmp2.Height;
 
             // reading image begins here.
             for(int i=0; i <bmp2.Height; i++)
@@ -89,7 +91,9 @@ namespace imageEncryption
                     Color pix = bmp2.GetPixel(j, i);
                     String abc = pix.R.ToString("000") + pix.G.ToString("000") + pix.B.ToString("000");
                     iText += abc;
+                    progressBar1.Value = i * bmp2.Height + j;
                 }
+                progressBar1.Value = progressBar1.Maximum;
             }
 
             //MessageBox.Show(iText);
@@ -100,8 +104,8 @@ namespace imageEncryption
             //MessageBox.Show(iText);
             Bitmap bmp3 = encryption(bmp1, iText);
             string savef = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            savef += "\\output.png";
-            bmp3.Save(savef, ImageFormat.Png);
+            savef += "\\output.bmp";
+            bmp3.Save(savef, ImageFormat.Bmp);
             MessageBox.Show("Encryption Complete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
         }
@@ -116,7 +120,7 @@ namespace imageEncryption
 
             for (int i = 0; i < bmp.Height; i++) // iterate through rows
             {
-                for (int j = 0; j < bmp.Width; j++) // iterate in each row
+                for (int j = 8; j < bmp.Width; j++) // iterate in each row
                 {
                     Color pixel = bmp.GetPixel(j, i);  //read pixel at position j,i
 
