@@ -103,7 +103,7 @@ namespace imageEncryption
             Bitmap bmp3 = encryption(bmp1, iText);
             string savef = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             savef += "\\output.png";
-            bmp3.Save(savef, ImageFormat.Png);
+            bmp3.Save(savef);
             MessageBox.Show("Encryption Complete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
         }
@@ -112,9 +112,7 @@ namespace imageEncryption
         {
             int r = 0, g = 0, b = 0;
             int colorIndex = 0;
-            string abc = "Height = " + h.ToString();
-            abc += "\nWidth = " + w.ToString();
-            MessageBox.Show(abc);
+            
             for (int j = 0; j < 3; j++)
             {
                 Color pix = bmp.GetPixel(j, 0);
