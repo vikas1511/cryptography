@@ -102,8 +102,8 @@ namespace imageEncryption
             bmp1 = hwwrite(bmp1, bmp2.Height, bmp2.Width);
             Bitmap bmp3 = encryption(bmp1, iText);
             string savef = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            savef += "\\output.png";
-            bmp3.Save(savef);
+            savef += "\\output.bmp";
+            bmp3.Save(savef,ImageFormat.Bmp);
             MessageBox.Show("Encryption Complete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
         }
@@ -196,7 +196,7 @@ namespace imageEncryption
             int kkk = 6;
             for (int i = 0; i < bmp.Height; i++) // iterate through rows
             {
-                for (int j = kkk; j < bmp.Width; j++) // iterate in each row
+                for (int j = 6; j < bmp.Width; j++) // iterate in each row
                 {
                     Color pixel = bmp.GetPixel(j, i);  //read pixel at position j,i
 

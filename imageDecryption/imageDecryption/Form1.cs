@@ -156,7 +156,7 @@ namespace imageDecryption
 
             for (int i = 0; i < bmp.Height; i++)  // iterate rows
             {
-                for (int j = kkk; j < bmp.Width; j++)  // iterate in each row
+                for (int j = 6; j < bmp.Width; j++)  // iterate in each row
                 {
                     Color pixel = bmp.GetPixel(j, i);
 
@@ -224,7 +224,7 @@ namespace imageDecryption
                 for(int j = 0; j < wid; j++)
                 {
                     int r = 0, g = 0, b = 0;
-                    while(m < stext.Length)
+                    if(m < stext.Length)
                     {
                         for(int buf = 0; buf < 3; buf++)
                         {
