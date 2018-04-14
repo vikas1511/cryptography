@@ -46,7 +46,7 @@ namespace imageDecryption
 
             hei = hRead(bmp1);
             wid = wRead(bmp1);
-
+            int flag1 = 1;
             String secImg = decrypt(bmp1);
             try
             {
@@ -55,10 +55,14 @@ namespace imageDecryption
             catch
             {
                 MessageBox.Show("Wrong Password");
+                flag1 = 0;
             }
-            Bitmap bmpSec = new Bitmap(wid, hei);
-            bmpSec = secImgRet(bmpSec, secImg, wid, hei);
-            pictureBox1.Image = bmpSec;
+            if (flag1 == 1)
+            {
+                Bitmap bmpSec = new Bitmap(wid, hei);
+                bmpSec = secImgRet(bmpSec, secImg, wid, hei);
+                pictureBox1.Image = bmpSec;
+            }
 
         }
 
@@ -144,20 +148,6 @@ namespace imageDecryption
             return 0;
         }
 
-        private int revBits(int n)
-        {
-            int result = 0;
-
-            for (int i = 0; i < 8; i++)
-            {
-                result = result * 2 + n % 2;
-
-                n /= 2;
-            }
-
-            return result;
-        }
-
         private string decrypt(Bitmap bmp)
         {
             int colorUnitIndex = 0, charValue = 0;
@@ -210,6 +200,20 @@ namespace imageDecryption
                 kkk = 0;
             }
             return eText;
+        }
+
+        private int revBits(int n)
+        {
+            int result = 0;
+
+            for (int i = 0; i < 8; i++)
+            {
+                result = result * 2 + n % 2;
+
+                n /= 2;
+            }
+
+            return result;
         }
 
         private Bitmap secImgRet(Bitmap bmp, string stext, int wid, int hei)
