@@ -95,19 +95,97 @@ namespace imageEncryption
                 }
                 progressBar1.Value = progressBar1.Maximum;
             }
-
-            //MessageBox.Show(iText);
-
-
+          
             //MessageBox.Show(iText);
             iText = Crypto.EncryptStringAES(iText, textBox3.Text.ToString());
             //MessageBox.Show(iText);
+            bmp1 = hwwrite(bmp1, bmp2.Height, bmp2.Width);
             Bitmap bmp3 = encryption(bmp1, iText);
             string savef = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            savef += "\\output.bmp";
-            bmp3.Save(savef, ImageFormat.Bmp);
+            savef += "\\output.png";
+            bmp3.Save(savef, ImageFormat.Png);
             MessageBox.Show("Encryption Complete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
+        }
+
+        private Bitmap hwwrite(Bitmap bmp, int h, int w)
+        {
+            int r = 0, g = 0, b = 0;
+            int colorIndex = 0;
+            string abc = "Height = " + h.ToString();
+            abc += "\nWidth = " + w.ToString();
+            MessageBox.Show(abc);
+            for (int j = 0; j < 3; j++)
+            {
+                Color pix = bmp.GetPixel(j, 0);
+
+                r = pix.R - pix.R % 2; //MessageBox.Show(pix.R.ToString());
+                g = pix.G - pix.G % 2; //MessageBox.Show(pix.G.ToString());
+                b = pix.B - pix.B % 2; //MessageBox.Show(pix.B.ToString());
+
+                for (int n = 0; n < 3; n++)
+                {
+                    switch (colorIndex % 3)
+                    {
+                        case 0:
+                            r = r + h % 2;
+                            h = h / 2;
+                            // MessageBox.Show(r.ToString());
+                            break;
+
+                        case 1:
+                            g = g + h % 2;
+                            h = h / 2;
+                            // MessageBox.Show(g.ToString());
+                            break;
+
+                        case 2:
+                            b = b + h % 2;
+                            h = h / 2;
+                            bmp.SetPixel(j, 0, Color.FromArgb(r, g, b));
+                            // MessageBox.Show(b.ToString());
+                            break;
+                    }
+                    colorIndex++;
+                }
+            }
+
+            r = 0; g = 0; b = 0;
+            colorIndex = 0;
+            for (int j = 3; j < 6; j++)
+            {
+                Color pix = bmp.GetPixel(j, 0);
+                r = pix.R - pix.R % 2; //MessageBox.Show(pix.R.ToString());
+                g = pix.G - pix.G % 2; //MessageBox.Show(pix.G.ToString());
+                b = pix.B - pix.B % 2; //MessageBox.Show(pix.B.ToString());
+
+                for (int n = 0; n < 3; n++)
+                {
+                    switch (colorIndex % 3)
+                    {
+                        case 0:
+                            r = r + w % 2;
+                            w = w / 2;
+                            // MessageBox.Show(r.ToString());
+                            break;
+
+                        case 1:
+                            g = g + w % 2;
+                            w = w / 2;
+                            // MessageBox.Show(g.ToString());
+                            break;
+
+                        case 2:
+                            b = b + w % 2;
+                            w = w / 2;
+                            bmp.SetPixel(j, 0, Color.FromArgb(r, g, b));
+                            //MessageBox.Show(b.ToString());
+                            break;
+                    }
+                    colorIndex++;
+                }
+            }
+            return bmp;
         }
 
         private Bitmap encryption(Bitmap bmp, String str)
@@ -117,10 +195,10 @@ namespace imageEncryption
             long pixelElementIndex = 0; //index of pixel being processed
             int zeros = 0; // no of zeros at the finishing
             int R = 0, G = 0, B = 0; // to hold pixel element
-
+            int kkk = 6;
             for (int i = 0; i < bmp.Height; i++) // iterate through rows
             {
-                for (int j = 0; j < bmp.Width; j++) // iterate in each row
+                for (int j = kkk; j < bmp.Width; j++) // iterate in each row
                 {
                     Color pixel = bmp.GetPixel(j, i);  //read pixel at position j,i
 
@@ -185,6 +263,7 @@ namespace imageEncryption
                             zeros++;
                     }
                 }
+                kkk = 0;
             }
             return bmp;
         }
