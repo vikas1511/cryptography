@@ -15,6 +15,7 @@ namespace encryptionInterface
         public encry()
         {
             InitializeComponent();
+            label1.Text = "User";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,5 +56,7 @@ namespace encryptionInterface
             }
 
         }
+
+        
     }
 }
