@@ -216,6 +216,11 @@ namespace imageDecryption
             return result;
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private Bitmap secImgRet(Bitmap bmp, string stext, int wid, int hei)
         {
             int m = 0;
