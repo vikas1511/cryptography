@@ -36,5 +36,24 @@ namespace encryptionInterface
 
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == true)
+            {
+                Hide();
+                txtdecy tc = new txtdecy();
+                tc.ShowDialog();
+                Close();
+            }
+            if (radioButton2.Checked == true)
+            {
+                Hide();
+                imgdecy ic = new imgdecy();
+                ic.ShowDialog();
+                Close();
+            }
+
+        }
     }
 }

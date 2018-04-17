@@ -57,6 +57,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="imgdecy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="imgdecy.Designer.cs">
+      <DependentUpon>imgdecy.cs</DependentUpon>
+    </Compile>
     <Compile Include="imgency.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     </Compile>
     <Compile Include="signup.Designer.cs">
       <DependentUpon>signup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="txtdecy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="txtdecy.Designer.cs">
+      <DependentUpon>txtdecy.cs</DependentUpon>
     </Compile>
     <Compile Include="txtency.cs">
       <SubType>Form</SubType>
