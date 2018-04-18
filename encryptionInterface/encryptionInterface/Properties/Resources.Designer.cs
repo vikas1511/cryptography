@@ -93,9 +93,9 @@ namespace encryptionInterface.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap metal_texture_abstract_hd_wallpaper_1920x1080_5955 {
+        internal static System.Drawing.Bitmap m_etal_texture_abstract_hd_wallpaper_1920x1080_5955 {
             get {
-                object obj = ResourceManager.GetObject("metal-texture-abstract-hd-wallpaper-1920x1080-5955", resourceCulture);
+                object obj = ResourceManager.GetObject("m etal-texture-abstract-hd-wallpaper-1920x1080-5955", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

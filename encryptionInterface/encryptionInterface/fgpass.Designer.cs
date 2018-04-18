@@ -59,7 +59,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(48, 150);
+            this.label2.Location = new System.Drawing.Point(48, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(195, 20);
             this.label2.TabIndex = 1;
@@ -71,7 +71,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(41, 210);
+            this.label3.Location = new System.Drawing.Point(41, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(202, 20);
             this.label3.TabIndex = 2;
@@ -83,7 +83,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(60, 262);
+            this.label4.Location = new System.Drawing.Point(60, 257);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(183, 20);
             this.label4.TabIndex = 3;
@@ -91,7 +91,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(290, 145);
+            this.textBox1.Location = new System.Drawing.Point(290, 159);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(242, 25);
@@ -117,17 +117,17 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(290, 307);
+            this.button1.Location = new System.Drawing.Point(571, 197);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 36);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Change Password";
+            this.button1.Text = "Change";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(483, 307);
+            this.button2.Location = new System.Drawing.Point(594, 257);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 36);
             this.button2.TabIndex = 8;
@@ -149,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::encryptionInterface.Properties.Resources.metal_texture_abstract_hd_wallpaper_1920x1080_5955;
+            this.BackgroundImage = global::encryptionInterface.Properties.Resources.m_etal_texture_abstract_hd_wallpaper_1920x1080_5955;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(759, 417);
             this.Controls.Add(this.pictureBox1);

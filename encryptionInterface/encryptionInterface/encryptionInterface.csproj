@@ -150,7 +150,7 @@
     <None Include="Resources\login-screen.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\metal-texture-abstract-hd-wallpaper-1920x1080-5955.jpg" />
+    <None Include="Resources\m etal-texture-abstract-hd-wallpaper-1920x1080-5955.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
