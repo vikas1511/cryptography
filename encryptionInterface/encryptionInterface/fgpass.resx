@@ -117,23 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picture-frame-with-mountain-image_318-402931" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picture-frame-with-mountain-image_318-402931.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picture-frame-with-mountain-image_318-40293" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picture-frame-with-mountain-image_318-40293.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="encrypt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\encrypt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="login-screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login-screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="metal-texture-abstract-hd-wallpaper-1920x1080-5955" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\metal-texture-abstract-hd-wallpaper-1920x1080-5955.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

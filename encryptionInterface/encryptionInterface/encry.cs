@@ -70,6 +70,12 @@ namespace encryptionInterface
 
         }
 
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hide();
+            fgpass fgp = new fgpass();
+            fgp.ShowDialog();
+            Close();
+        }
     }
 }

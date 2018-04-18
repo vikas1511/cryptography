@@ -83,6 +83,26 @@ namespace encryptionInterface.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap login_screen {
+            get {
+                object obj = ResourceManager.GetObject("login-screen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap metal_texture_abstract_hd_wallpaper_1920x1080_5955 {
+            get {
+                object obj = ResourceManager.GetObject("metal-texture-abstract-hd-wallpaper-1920x1080-5955", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap picture_frame_with_mountain_image_318_40293 {
             get {
                 object obj = ResourceManager.GetObject("picture-frame-with-mountain-image_318-40293", resourceCulture);

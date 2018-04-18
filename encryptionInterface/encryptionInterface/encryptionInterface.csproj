@@ -52,6 +52,12 @@
     <Compile Include="encry.Designer.cs">
       <DependentUpon>encry.cs</DependentUpon>
     </Compile>
+    <Compile Include="fgpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fgpass.Designer.cs">
+      <DependentUpon>fgpass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </Compile>
     <EmbeddedResource Include="encry.resx">
       <DependentUpon>encry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fgpass.resx">
+      <DependentUpon>fgpass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -136,6 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\picture-frame-with-mountain-image_318-402931.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metal-texture-abstract-hd-wallpaper-1920x1080-5955.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
