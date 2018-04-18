@@ -15,11 +15,18 @@ namespace encryptionInterface
         public encry()
         {
             InitializeComponent();
-            label1.Text = "User";
+            String wel = "Hi, ";
+            wel = wel + Application.UserAppDataRegistry.GetValue("username").ToString();
+            label1.Text = wel;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (radioButton1.Checked == false && radioButton2.Checked == false)
+            {
+                MessageBox.Show("Please select the Format");
+            }
+            
             if (radioButton1.Checked == true)
             {
                 Hide();
@@ -27,6 +34,7 @@ namespace encryptionInterface
                 tc.ShowDialog();
                 Close();
             }
+
             if (radioButton2.Checked == true)
             {
                 Hide();
@@ -40,6 +48,11 @@ namespace encryptionInterface
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if(radioButton1.Checked == false && radioButton2.Checked == false)
+            {
+                MessageBox.Show("Please select the Format");
+            }
+
             if (radioButton1.Checked == true)
             {
                 Hide();
@@ -57,6 +70,6 @@ namespace encryptionInterface
 
         }
 
-        
+
     }
 }
