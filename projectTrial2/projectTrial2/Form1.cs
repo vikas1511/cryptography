@@ -46,7 +46,8 @@ namespace projectTrial2
             {
                 MessageBox.Show("Select an Image to Decrypt", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            sText = decrypt(bmap);
+            int len = lRead(bmap);
+            sText = decrypt(bmap,len);
             try
             {
                 sText = Crypto.DecryptStringAES(sText, textBox2.Text.ToString());
@@ -77,52 +78,83 @@ namespace projectTrial2
             textBox2.Text = string.Empty;
         }
 
-        private string decrypt(Bitmap bmp)
+        private int lRead(Bitmap bmp)
         {
-            int colorUnitIndex = 0, charValue = 0;  
-            string eText = String.Empty; // to store secret ext from ing
-
-            for(int i=0;i< bmp.Height; i++)  // iterate rows
+            int colorIndex = 0;
+            int value = 0;
+            for (int j = 0; j < 3; j++)
             {
-                for(int j=0;j< bmp.Width; j++)  // iterate in each row
+                Color p = bmp.GetPixel(j, 0);
+
+                for (int n = 0; n < 3; n++)
                 {
-                    Color pixel = bmp.GetPixel(j, i);
-
-                    for(int n = 0; n < 3; n++)
+                    switch (colorIndex % 3)
                     {
-                        switch(colorUnitIndex % 3)
-                        {
-                            case 0:
-                                {
-                                    charValue = charValue * 2 + pixel.R % 2; // append the bit value to charValue
-                                }
-                                break;
-                            case 1:
-                                {
-                                    charValue = charValue * 2 + pixel.G % 2;
-                                }
-                                break;
-                            case 2:
-                                {
-                                    charValue = charValue * 2 + pixel.B % 2;
-                                }
-                                break;
-                        }
-                        colorUnitIndex++;
-
-                        if(colorUnitIndex % 8 == 0)
-                        {
-                            charValue = revBits(charValue);
-
-                            if (charValue == 0)
+                        case 0:
                             {
-                                return eText;
+                                value = value * 2 + p.R % 2;
                             }
+                            break;
 
-                            char c = (char)charValue; // conversion from int to char
+                        case 1:
+                            {
+                                value = value * 2 + p.G % 2;
+                            }
+                            break;
 
-                            eText += c.ToString();
-                        }
+                        case 2:
+                            {
+                                value = value * 2 + p.B % 2;
+                            }
+                            break;
+                    }
+                    colorIndex++;
+                    if (colorIndex % 8 == 0)
+                    {
+                        int val = revBits(value);
+                        return val;
+                    }
+                }
+            }
+            return 0;
+        }
+
+        private string decrypt(Bitmap bmp, int len)
+        {
+            int charValue = 0;
+            string eText = String.Empty; // to store secret ext from ing
+            int chcount = 0;
+
+            for (int i = 0; i < bmp.Height; i++)
+            {
+                for (int j = 3; j < bmp.Width; j = j + 2)
+                {
+                    
+                    if (chcount < len)
+                    {
+
+                        Color pix = bmp.GetPixel(j, i);
+                        int R = revB(pix.R % 4);
+                        charValue = charValue * 4 + R;
+                        charValue = charValue * 2 + pix.G % 2;
+                        charValue = charValue * 2 + pix.B % 2;
+
+
+                        pix = bmp.GetPixel(j + 1, i);
+                        R = revB(pix.R % 4);
+                        charValue = charValue * 4 + R;
+                        charValue = charValue * 2 + pix.G % 2;
+                        charValue = charValue * 2 + pix.B % 2;
+
+                        charValue = revBits(charValue);
+                        char c = (char)charValue;
+                        //MessageBox.Show(c.ToString());
+                        eText += c.ToString();
+                        chcount++;
+                    }
+                    else
+                    {
+                        return eText;
                     }
                 }
             }
@@ -141,6 +173,17 @@ namespace projectTrial2
             }
 
             return result;
+        }
+
+        private int revB(int n)
+        {
+            int r = 0;
+            for(int i = 0; i < 2; i++)
+            {
+                r = r * 2 + n % 2;
+                n = n / 2;
+            }
+            return r;
         }
     }
 }
