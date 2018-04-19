@@ -92,9 +92,10 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.CadetBlue;
+            this.button3.BackColor = System.Drawing.Color.PowderBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button3.Location = new System.Drawing.Point(1123, 572);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 29);

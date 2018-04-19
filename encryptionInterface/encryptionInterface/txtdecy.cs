@@ -140,5 +140,13 @@ namespace encryptionInterface
 
             return result;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            encry en = new encry();
+            en.ShowDialog();
+            this.Close();
+        }
     }
 }

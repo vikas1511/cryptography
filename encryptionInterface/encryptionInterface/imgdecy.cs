@@ -224,6 +224,14 @@ namespace encryptionInterface
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            encry en = new encry();
+            en.ShowDialog();
+            this.Close();
+        }
+
         private Bitmap secImgRet(Bitmap bmp, string stext, int wid, int hei)
         {
             int m = 0;

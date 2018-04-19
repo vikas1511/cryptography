@@ -184,6 +184,14 @@ namespace encryptionInterface
             return bmp;
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            encry en = new encry();
+            en.ShowDialog();
+            this.Close();
+        }
+
         private Bitmap encryption(Bitmap bmp, String str)
         {
             State st = State.Hiding; // Hiding chars in image
