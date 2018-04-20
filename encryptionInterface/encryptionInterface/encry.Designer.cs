@@ -144,6 +144,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.MaximizeBox = false;
             this.Name = "encry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "encry";
             this.ResumeLayout(false);
             this.PerformLayout();

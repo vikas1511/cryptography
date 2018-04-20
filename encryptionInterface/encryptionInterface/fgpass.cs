@@ -64,7 +64,8 @@ namespace encryptionInterface
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
+
         }
 
         private void fgpass_Load(object sender, EventArgs e)
