@@ -89,7 +89,7 @@ namespace encryptionInterface
             string savef = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             savef += "\\output.bmp";
             bmp3.Save(savef, ImageFormat.Bmp);
-            MessageBox.Show("Encryption Complete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Encryption Complete", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button1_Click(object sender, EventArgs e)
