@@ -122,7 +122,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 23</value>
+    <value>145, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textBox1.Multiline" type="System.Boolean, mscorlib">
@@ -154,7 +154,7 @@
     <value>Monotype Corsiva, 14.25pt, style=Bold, Italic</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>888, 17</value>
+    <value>889, 21</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 32</value>
@@ -184,10 +184,10 @@
     <value>Monotype Corsiva, 20.25pt, style=Bold, Italic</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 320</value>
+    <value>218, 317</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 76</value>
+    <value>176, 88</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -211,7 +211,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 77</value>
+    <value>145, 80</value>
   </data>
   <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1019, 82</value>
@@ -328,7 +328,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 200</value>
+    <value>145, 201</value>
   </data>
   <data name="textBox2.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -385,10 +385,10 @@
     <value />
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>532, 181</value>
+    <value>566, 207</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>576, 360</value>
+    <value>592, 406</value>
   </data>
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -418,7 +418,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1036, 23</value>
+    <value>1071, 23</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 23</value>
@@ -12617,7 +12617,10 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1271, 599</value>
+    <value>1226, 686</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>txtency</value>

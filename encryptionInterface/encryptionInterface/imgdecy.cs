@@ -131,7 +131,7 @@ namespace encryptionInterface
                 {
                     Color pixel = bmp.GetPixel(j, i);
 
-                    progressBar1.Value = (i+j-6)/8;
+                    progressBar1.Value = i+j-6;
 
                     for (int n = 0; n < 3; n++)
                     {
@@ -206,7 +206,7 @@ namespace encryptionInterface
 
             progressBar1.Visible = true;
             progressBar1.Minimum = 0;
-            progressBar1.Maximum = hei + wid;
+            progressBar1.Maximum = (hei + wid)*8;
 
             int flag1 = 1;
             String secImg = decrypt(bmp1);
