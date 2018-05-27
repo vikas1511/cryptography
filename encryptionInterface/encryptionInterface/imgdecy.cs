@@ -167,7 +167,7 @@ namespace encryptionInterface
                         }
                     }
                 }
-               // kkk = 0;
+               
             }
             return eText;
         }
