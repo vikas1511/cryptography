@@ -124,11 +124,14 @@ namespace encryptionInterface
             string eText = String.Empty; // to store secret ext from ing
             //int kkk = 6;
 
+
             for (int i = 0; i < bmp.Height; i++)  // iterate rows
             {
                 for (int j = 6; j < bmp.Width; j++)  // iterate in each row
                 {
                     Color pixel = bmp.GetPixel(j, i);
+
+                    progressBar1.Value = (i+j-6)/8;
 
                     for (int n = 0; n < 3; n++)
                     {
@@ -201,6 +204,10 @@ namespace encryptionInterface
             hei = hRead(bmp1);
             wid = wRead(bmp1);
 
+            progressBar1.Visible = true;
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = hei + wid;
+
             int flag1 = 1;
             String secImg = decrypt(bmp1);
             try
@@ -219,6 +226,7 @@ namespace encryptionInterface
                 pictureBox2.Image = bmpSec;
                 String secsave = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 secsave += "\\secImage.bmp";
+                progressBar1.Value = progressBar1.Maximum;
                 bmpSec.Save(secsave, ImageFormat.Bmp);
                 MessageBox.Show("Secret Image Stored to Desktop", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
