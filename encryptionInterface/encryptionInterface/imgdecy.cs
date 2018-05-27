@@ -131,8 +131,6 @@ namespace encryptionInterface
                 {
                     Color pixel = bmp.GetPixel(j, i);
 
-                    progressBar1.Value = i+j-6;
-
                     for (int n = 0; n < 3; n++)
                     {
                         switch (colorUnitIndex % 3)
@@ -191,6 +189,7 @@ namespace encryptionInterface
 
         private void button2_Click(object sender, EventArgs e)
         {
+            label1.Visible = false;
             if (textBox1.Text == String.Empty || textBox2.Text == String.Empty)
             {
                 MessageBox.Show("All fields are mandatory", "Incomplete information", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -203,10 +202,6 @@ namespace encryptionInterface
 
             hei = hRead(bmp1);
             wid = wRead(bmp1);
-
-            progressBar1.Visible = true;
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = (hei + wid)*8;
 
             int flag1 = 1;
             String secImg = decrypt(bmp1);
@@ -226,9 +221,14 @@ namespace encryptionInterface
                 pictureBox2.Image = bmpSec;
                 String secsave = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 secsave += "\\secImage.bmp";
-                progressBar1.Value = progressBar1.Maximum;
                 bmpSec.Save(secsave, ImageFormat.Bmp);
+
+                label1.Text = "Decryption successful!\nThe secret image is:";
+                label1.Visible = true;
+
                 MessageBox.Show("Secret Image Stored to Desktop", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                
             }
         }
 
