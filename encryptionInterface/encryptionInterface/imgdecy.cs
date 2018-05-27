@@ -122,7 +122,7 @@ namespace encryptionInterface
         {
             int colorUnitIndex = 0, charValue = 0;
             string eText = String.Empty; // to store secret ext from ing
-            int kkk = 6;
+            //int kkk = 6;
 
             for (int i = 0; i < bmp.Height; i++)  // iterate rows
             {
@@ -167,7 +167,7 @@ namespace encryptionInterface
                         }
                     }
                 }
-                kkk = 0;
+               // kkk = 0;
             }
             return eText;
         }

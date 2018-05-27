@@ -51,7 +51,7 @@ namespace encryptionInterface
                 if (textBox2.Text == textBox3.Text && textBox2.Text != String.Empty)
                 {
                     Application.UserAppDataRegistry.SetValue("passwd", textBox2.Text.ToString());
-                    MessageBox.Show("Password Changed\nRe-Open the Application");
+                    MessageBox.Show("Password Changed");
                     Close();
                 }
             }

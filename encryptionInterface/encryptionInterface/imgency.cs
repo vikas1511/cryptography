@@ -199,7 +199,7 @@ namespace encryptionInterface
             long pixelElementIndex = 0; //index of pixel being processed
             int zeros = 0; // no of zeros at the finishing
             int R = 0, G = 0, B = 0; // to hold pixel element
-            int kkk = 6;
+            //int kkk = 6;
             for (int i = 0; i < bmp.Height; i++) // iterate through rows
             {
                 for (int j = 6; j < bmp.Width; j++) // iterate in each row
@@ -267,7 +267,7 @@ namespace encryptionInterface
                             zeros++;
                     }
                 }
-                kkk = 0;
+                //kkk = 0;
             }
             return bmp;
         }
