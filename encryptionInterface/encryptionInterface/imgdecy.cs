@@ -193,11 +193,13 @@ namespace encryptionInterface
             if (textBox1.Text == String.Empty || textBox2.Text == String.Empty)
             {
                 MessageBox.Show("All fields are mandatory", "Incomplete information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (textBox2.Text.Length < 6)
             {
                 MessageBox.Show("Secret Key must be 6 characters in length", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             hei = hRead(bmp1);

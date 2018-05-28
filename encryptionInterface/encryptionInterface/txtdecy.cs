@@ -42,6 +42,12 @@ namespace encryptionInterface
             if (textBox1.Text == String.Empty)
             {
                 MessageBox.Show("Select an Image to Decrypt", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if(textBox2.Text.Length < 6)
+            {
+                MessageBox.Show("Secret Key must be 6 characters");
             }
 
             sText = decrypt(bmap);
